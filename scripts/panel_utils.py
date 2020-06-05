@@ -6,8 +6,9 @@ __author__ = "Luc Anselin lanselin@gmail.com, \
               Pedro V. Amaral pedrovma@gmail.com"
 
 import numpy as np
+from sputils import spdot
 
-__all__ = ["check_panel"]
+__all__ = ["check_panel", "demean_panel"]
 
 
 def check_panel(y, x, w, name_y, name_x):
@@ -34,9 +35,9 @@ def check_panel(y, x, w, name_y, name_x):
                         "object.")
     # Wide format
     if y.shape[1] > 1:
-        message = ("Assuming time data is in wide format, i.e. y[:, 0] refers"
-                   "to T0, y[:, 1] refers to T1, etc.\nSimilarly, assuming"
-                   "x[:, 0:T] refers to T periods of k1, x[:, T+1:2T] refers"
+        message = ("Assuming panel is in wide format, i.e. y[:, 0] refers "
+                   "to T0, y[:, 1] refers to T1, etc.\nSimilarly, assuming "
+                   "x[:, 0:T] refers to T periods of k1, x[:, T+1:2T] refers "
                    "to k2, etc.")
         print("Warning: " + message)
         N, T = y.shape[0], y.shape[1]
@@ -96,8 +97,10 @@ def demean_panel(arr, n, t):
     arr_dm      : array
                   Demeaned variable
     """
-    if arr.ndim > 1:
-        arr = arr.reshape(-1)
-    arr_mean = arr.reshape((n, t)).mean(axis=1)
-    arr_dm = arr - np.tile(arr_mean, t)
+
+    one = np.ones((t, 1))
+    J = np.identity(t) - (1/t)*spdot(one, one.T)
+    Q = np.kron(J, np.identity(n))
+    arr_dm = spdot(Q, arr)
+
     return arr_dm
