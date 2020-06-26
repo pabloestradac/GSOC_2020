@@ -4,10 +4,10 @@
 
 **6/26 meeting (GSoC Panel call):**
 
-- Update documentation of the `Panel_ML` class.
+- Update documentation of the `Panel_ML` class. Follow the guidelines from [Documenting classes](https://numpydoc.readthedocs.io/en/latest/format.html#documenting-classes).
 - It's better to follow the current structure of `spreg `. For each user class, there is a Base class that handle the estimation. 
-- The current structure of the estimations will follow as [this]()
-- 
+- For now, the current structure of the estimations will follow as [this](https://github.com/pabloestradac/GSOC2020/blob/master/docs/structure.md).
+- Create a pull request for each estimation. Also, update the current [PR #41](https://github.com/pysal/spreg/pull/41).
 
 
 
@@ -17,6 +17,7 @@
 
 - Assess the performance of `Panel_ML` using `timeit`.
 - Create `test_Panel_ML` for unit testing.
+- In future meetings, each student will have to present any results from the work he has done.
 
 
 
