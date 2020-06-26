@@ -8,6 +8,7 @@
 - It's better to follow the current structure of `spreg `. For each user class, there is a Base class that handle the estimation. 
 - For now, the current structure of the estimations will follow as [this](https://github.com/pabloestradac/GSOC2020/blob/master/docs/structure.md).
 - Create a pull request for each estimation. Also, update the current [PR #41](https://github.com/pysal/spreg/pull/41).
+- Try to handle the `RuntimeWarning: Method 'bounded' does not support relative tolerance in x`.
 
 
 
