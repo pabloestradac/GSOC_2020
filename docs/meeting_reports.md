@@ -2,6 +2,36 @@
 
 
 
+**6/26 meeting (GSoC Panel call):**
+
+- Update documentation of the `Panel_ML` class.
+- It's better to follow the current structure of `spreg `. For each user class, there is a Base class that handle the estimation. 
+- The current structure of the estimations will follow as [this]()
+- 
+
+
+
+---
+
+**6/19 meeting (GSoC group call):**
+
+- Assess the performance of `Panel_ML` using `timeit`.
+- Create `test_Panel_ML` for unit testing.
+
+
+
+---
+
+**6/12 meeting  (GSoC Panel call):**
+
+- Create a notebook explaining the features of the new class `Panel_ML`. 
+- Use a notebook to explain the results with an example. And use another notebook to explain the detailed estimation of `Panel_ML`.
+- Use `splm` of R, to compare the results with `Panel_ML`.
+
+
+
+---
+
 **6/05 meeting (PySAL call):**
 
 - Brief presentation of the current state of GSoC projects.
