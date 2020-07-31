@@ -27,8 +27,8 @@ panel_utils.py
 |   demean_panel
 
 diagnostics_panel.py
-|   in_progress
-|   in_progress
+|   LM
+|   LR
 ```
 
 
